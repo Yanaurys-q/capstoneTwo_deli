@@ -1,0 +1,3 @@
+Customer: Sara
+MEDIUM Lemonade Drink
+Total: $2.00

@@ -1,0 +1,10 @@
+Customer: Yana
+Chips (Sour Cream)
+4" WHITE Sandwich (Toasted)
+  - Lettuce x1
+  - Tomato x1
+  - Roast Beef x1
+  - Cheddar x1
+  - Swiss x1
+
+Total: $10.50
