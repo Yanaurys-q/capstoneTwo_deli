@@ -66,7 +66,7 @@ class TextEffects {
     }
 
     public static void blinkingText(String message) {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4; i++) {
             System.out.print("\r" + message);
             try {
                 Thread.sleep(500);

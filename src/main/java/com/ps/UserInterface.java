@@ -32,7 +32,7 @@ public class UserInterface
                     displayOrderMenu();
                     break;
                 case 0:
-                    System.out.println("Exiting... Stay tasty!");
+                    DeliColor.printReceiptArt();
                     break;
                 default:
                     System.out.println("Invalid command, try again");
@@ -256,7 +256,6 @@ public class UserInterface
 
     private static void handleCheckout(Order order, String customerName)
     {
-        DeliColor.printReceiptArt();
         System.out.println("\nChecking out for " + customerName + "...");
 
         LocalDateTime now = LocalDateTime.now();
