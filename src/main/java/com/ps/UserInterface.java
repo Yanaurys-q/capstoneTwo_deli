@@ -11,7 +11,8 @@ public class UserInterface
 {
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void init() {
+    public static void init()
+    {
         display();
     }
 
@@ -19,11 +20,12 @@ public class UserInterface
     {
         int mainMenuCommand;
         do {
-            System.out.println("--------Welcome to DELI-cious Sandwich Shop!--------");
+
+            System.out.println("--------Welcome to The Grub Hub!--------");
             System.out.println("1) Start New Order");
             System.out.println("0) Exit");
-            System.out.print("Command: ");
-            mainMenuCommand = getIntInput(0, 1);
+            System.out.print("Choose an option: ");
+            mainMenuCommand = scanner.nextInt();
 
             switch (mainMenuCommand) {
                 case 1:
@@ -50,33 +52,45 @@ public class UserInterface
 
         do
         {
-            System.out.println("\n--------Order Menu--------");
+            DeliColor.printMenuArt();
             System.out.println("1) Add Sandwich");
-            System.out.println("2) Add Drink");
-            System.out.println("3) Add Chips");
-            System.out.println("4) Checkout");
+            System.out.println("2) Add Signature Sandwich");
+            System.out.println("3) Add Drink");
+            System.out.println("4) Add Chips");
+            System.out.println("5) Checkout");
             System.out.println("0) Cancel Order");
             System.out.print("Command: ");
-            orderMenuInput = getIntInput(0, 4);
+            orderMenuInput = getIntInput(0, 5);
 
             switch (orderMenuInput)
             {
                 case 1:
+                    DeliColor.printSandwichArt();
                     Sandwich sandwich = buildSandwich();
                     order.addProduct(sandwich);
                     System.out.println("Sandwich added!");
                     break;
                 case 2:
+                    DeliColor.printSelectSandwichArt();
+                    Sandwich signatureSandwich = chooseSignatureSandwich();
+                    if (signatureSandwich != null) {
+                        order.addProduct(signatureSandwich);
+                        System.out.println("Signature Sandwich added!");
+                    }
+                    break;
+                case 3:
+                    DeliColor.printDrinkArt();
                     Drink drink = buildDrink();
                     order.addProduct(drink);
                     System.out.println("Drink added!");
                     break;
-                case 3:
+                case 4:
+                    DeliColor.printChipsArt();
                     Chip chip = buildChip();
                     order.addProduct(chip);
                     System.out.println("Chips added!");
                     break;
-                case 4:
+                case 5:
                     handleCheckout(order, customerName);
                     return;
                 case 0:
@@ -87,6 +101,88 @@ public class UserInterface
             }
         } while (true);
     }
+
+    private static Sandwich chooseSignatureSandwich()
+    {
+        int choice;
+        do {
+            System.out.println("Choose a Signature Sandwich:");
+            System.out.println("1) BLT");
+            System.out.println("2) Philly Cheese Steak");
+            System.out.println("3) Veggie Delight");
+            System.out.println("4) Chicken Club");
+            System.out.println("0) Back to Order Menu");
+            System.out.print("Choose an option: ");
+            choice = scanner.nextInt();
+
+            Sandwich sandwich = null;
+            switch (choice) {
+                case 1:
+                    sandwich = new BLT();
+                    break;
+                case 2:
+                    sandwich = new PhillyCheeseSteak();
+                    break;
+                case 3:
+                    sandwich = new VeggieDelight();
+                    break;
+                case 4:
+                    sandwich = new ChickenClub();
+                    break;
+                case 0:
+                    return null;
+                default:
+                    System.out.println("Invalid choice. Try again.");
+            }
+
+            if (sandwich != null)
+            {
+                System.out.println("You chose: " + sandwich.getName());
+                System.out.println(sandwich.getDetails());
+                customizeSandwich(sandwich);
+                return sandwich;
+            }
+        } while (choice != 0);
+
+        return null;
+    }
+
+    private static void customizeSandwich(Sandwich sandwich) {
+        System.out.println("Would you like to customize your sandwich? (y/n)");
+        String response = scanner.next();
+        if (response.equalsIgnoreCase("y")) {
+            boolean customizing = true;
+            while (customizing) {
+                System.out.println("\nCurrent toppings:");
+                ArrayList<Topping> currentToppings = sandwich.getToppings();
+                for (int i = 0; i < currentToppings.size(); i++) {
+                    System.out.println((i + 1) + ") " + currentToppings.get(i).getName());
+                }
+
+                System.out.println("\nCustomization options:");
+                System.out.println("1) Add Topping");
+                System.out.println("2) Remove Topping");
+                System.out.println("0) Done");
+                System.out.print("Choose an option: ");
+                int choice = getIntInput(0, 2);
+
+                switch (choice) {
+                    case 1:
+                        ToppingManager.addTopping(sandwich);
+                        break;
+                    case 2:
+                        ToppingManager.removeTopping(sandwich);
+                        break;
+                    case 0:
+                        customizing = false;
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Try again.");
+                }
+            }
+        }
+    }
+
 
     private static Sandwich buildSandwich()
     {
@@ -122,26 +218,7 @@ public class UserInterface
 
         Sandwich sandwich = new Sandwich(size, bread, toasted);
 
-        scanner.nextLine();
-        ArrayList<Topping> toppings = new ArrayList<>();
-        String[] regulars = {"Lettuce", "Tomato", "Onion", "Pickles","Cheddar", "Swiss"};
-        String[] premiums = {"Turkey", "Ham", "Roast Beef"};
-
-        System.out.println("Add regular toppings (each $0.50). Enter quantity for each (0 for none):");
-        for (String reg : regulars) {
-            System.out.print(reg + ": ");
-            int qty = getIntInput(0, 5);
-            if (qty > 0) toppings.add(new Regular(reg, qty));
-        }
-
-        System.out.println("Add premium toppings (each $1.00). Enter quantity for each (0 for none):");
-        for (String prem : premiums) {
-            System.out.print(prem + ": ");
-            int qty = getIntInput(0, 5);
-            if (qty > 0) toppings.add(new Premium(prem, qty));
-        }
-
-        for (Topping t : toppings) sandwich.addTopping(t);
+        ToppingManager.addTopping(sandwich);
 
         return sandwich;
     }
@@ -179,6 +256,7 @@ public class UserInterface
 
     private static void handleCheckout(Order order, String customerName)
     {
+        DeliColor.printReceiptArt();
         System.out.println("\nChecking out for " + customerName + "...");
 
         LocalDateTime now = LocalDateTime.now();

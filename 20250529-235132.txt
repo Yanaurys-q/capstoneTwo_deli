@@ -1,0 +1,8 @@
+Customer: T
+BLT (Toasted)
+  - Bacon x1
+  - Cheddar x1
+  - Lettuce x1
+  - Ranch x1
+
+Total: $10.00

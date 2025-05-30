@@ -7,5 +7,5 @@ public class Regular extends Topping
         super(name, quantity);
     }
     @Override
-    public double getUnitPrice() { return 0.25; }
+    public double getUnitPrice() { return 0.50; }
 }

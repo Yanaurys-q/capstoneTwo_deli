@@ -1,0 +1,20 @@
+Customer: Yana
+Philly Cheese Steak (Toasted)
+  - Steak x1
+  - American Cheese x1
+  - Peppers x1
+  - Mayo x1
+
+Chips (Sour Cream)
+MEDIUM Iced Tea Drink
+4" WHEAT Sandwich (Toasted)
+  - Lettuce x1
+  - Tomato x1
+  - Onion x1
+  - Mayo x1
+  - Bacon x1
+  - Turkey x1
+  - Avocado x1
+  - Cheddar x1
+
+Total: $24.50

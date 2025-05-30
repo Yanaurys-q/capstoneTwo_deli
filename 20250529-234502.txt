@@ -1,0 +1,9 @@
+Customer: Yana
+BLT (Toasted)
+  - Bacon x1
+  - Cheddar x1
+  - Lettuce x1
+  - Tomato x1
+  - Ranch x1
+
+Total: $10.50

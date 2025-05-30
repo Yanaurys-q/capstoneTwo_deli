@@ -23,6 +23,10 @@ public class Sandwich extends Product {
     {
         toppings.add(topping);
     }
+    public ArrayList<Topping> getToppings()
+    {
+        return toppings;
+    }
 
     @Override
     public String getName()

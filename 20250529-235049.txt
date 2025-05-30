@@ -1,0 +1,17 @@
+Customer: Yana
+4" WHITE Sandwich (Toasted)
+  - Lettuce x1
+  - Tomato x1
+  - Mayo x1
+  - Onion x1
+  - Avocado x1
+  - Cheddar x1
+
+BLT (Toasted)
+  - Bacon x1
+  - Cheddar x1
+  - Lettuce x1
+  - Tomato x1
+  - Ranch x1
+
+Total: $19.50
