@@ -12,7 +12,7 @@ public class ToppingManager {
         for (int i = 0; i < regulars.length; i++) {
             System.out.println((i + 1) + ") " + regulars[i]);
         }
-        System.out.print("Enter the numbers of the toppings to add (ex:1,3): ");
+        System.out.print("Enter the numbers of the toppings to add (ex:1,3 Enter 0 for none): ");
         String[] regChoices = scanner.next().split(",");
         for (String choice : regChoices) {
             try {
@@ -28,7 +28,7 @@ public class ToppingManager {
         for (int i = 0; i < premiums.length; i++) {
             System.out.println((i + 1) + ") " + premiums[i]);
         }
-        System.out.print("Enter the numbers of the toppings to add (ex:1,3): ");
+        System.out.print("Enter the numbers of the toppings to add (ex:1,3 Enter 0 for none): ");
         String[] premChoices = scanner.next().split(",");
         for (String choice : premChoices) {
             try {

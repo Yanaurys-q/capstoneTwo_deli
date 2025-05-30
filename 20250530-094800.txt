@@ -1,0 +1,12 @@
+Customer: Yana
+Chicken Club (Toasted)
+  - Grilled Chicken x1
+  - Bacon x1
+  - Lettuce x1
+  - Tomato x1
+  - Mayo x1
+  - Onion x1
+
+Chips (Sour Cream)
+LARGE Sprite Drink
+Total: $15.00

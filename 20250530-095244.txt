@@ -1,0 +1,9 @@
+Customer: Yana
+Veggie Delight (Not Toasted)
+  - Lettuce x1
+  - Tomato x1
+  - Cucumber x1
+  - Mayo x1
+  - Cheddar x1
+
+Total: $10.00

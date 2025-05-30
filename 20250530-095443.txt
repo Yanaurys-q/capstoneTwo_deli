@@ -1,0 +1,11 @@
+Customer: Test
+MEDIUM Coke Drink
+4" WRAP Sandwich (Toasted)
+  - Lettuce x1
+  - Tomato x1
+  - Onion x1
+  - Mayo x1
+  - Cheddar x1
+  - Avocado x1
+
+Total: $11.00
