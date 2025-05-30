@@ -35,15 +35,47 @@ public class KeanuEffect
                         "     ~-._~-._ ~---------'  / .__..--~\n" +
                         "         ~-._\\.        _.-~_/\n" +
                         "             \\`--...--~_.-~\n" +
-                        "              `--...--~\n";
+                        "              `--...--~\n" +
+                        "                     \n ";
 
         for (char c : logo.toCharArray()) {
             System.out.print(ORANGE + c + RESET);
             try {
-                Thread.sleep(random.nextInt(10));
+                Thread.sleep(random.nextInt(5));
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         }
+    }
+}
+
+// no more classes adding here :(((
+
+class TextEffects {
+
+    public static void typewriterEffect(String message) {
+        for (char c : message.toCharArray()) {
+            System.out.print(c);
+            try {
+                Thread.sleep(35);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        System.out.println();
+    }
+
+    public static void blinkingText(String message) {
+        for (int i = 0; i < 5; i++) {
+            System.out.print("\r" + message);
+            try {
+                Thread.sleep(500);
+                System.out.print("\r" + " ".repeat(message.length()));
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+        System.out.println("\r" + message);
     }
 }

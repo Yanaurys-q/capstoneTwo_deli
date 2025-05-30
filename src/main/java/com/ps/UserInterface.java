@@ -21,7 +21,7 @@ public class UserInterface
         int mainMenuCommand;
         do {
 
-            System.out.println("--------Welcome to The Grub Hub!--------");
+            DeliColor.printWelcome();
             System.out.println("1) Start New Order");
             System.out.println("0) Exit");
             System.out.print("Choose an option: ");
@@ -68,33 +68,33 @@ public class UserInterface
                     DeliColor.printSandwichArt();
                     Sandwich sandwich = buildSandwich();
                     order.addProduct(sandwich);
-                    System.out.println("Sandwich added!");
+                    TextEffects.typewriterEffect("Sandwich added!");
                     break;
                 case 2:
                     DeliColor.printSelectSandwichArt();
                     Sandwich signatureSandwich = chooseSignatureSandwich();
                     if (signatureSandwich != null) {
                         order.addProduct(signatureSandwich);
-                        System.out.println("Signature Sandwich added!");
+                        TextEffects.typewriterEffect("Signature Sandwich added!");
                     }
                     break;
                 case 3:
                     DeliColor.printDrinkArt();
                     Drink drink = buildDrink();
                     order.addProduct(drink);
-                    System.out.println("Drink added!");
+                    TextEffects.typewriterEffect("Drink added!");
                     break;
                 case 4:
                     DeliColor.printChipsArt();
                     Chip chip = buildChip();
                     order.addProduct(chip);
-                    System.out.println("Chips added!");
+                    TextEffects.typewriterEffect("Chips added!");
                     break;
                 case 5:
                     handleCheckout(order, customerName);
                     return;
                 case 0:
-                    System.out.println("Order cancelled. Returning to main menu.");
+                    TextEffects.typewriterEffect("Order cancelled. Returning to main menu.");
                     return;
                 default:
                     System.out.println("Invalid command, try again");
@@ -137,7 +137,7 @@ public class UserInterface
 
             if (sandwich != null)
             {
-                System.out.println("You chose: " + sandwich.getName());
+                TextEffects.typewriterEffect("You chose: " + sandwich.getName());
                 System.out.println(sandwich.getDetails());
                 customizeSandwich(sandwich);
                 return sandwich;

@@ -44,13 +44,18 @@ public class DeliColor {
                 "              `--...--~\n" + RESET);
     }
 
+    public static void printWelcome() {
+        System.out.println(CYAN +
+                "╔══════════════════════════════════════════════╗\n"+
+                "║    --------Welcome to The Grub Hub!--------  ║\n"+
+                "╚══════════════════════════════════════════════╝\n" + RESET);
+    }
     public static void printMenuArt() {
         System.out.println(CORAL +
                 "   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" +
-                "   ~~~~~~~~~ The Grub Menu ~~~~~~~~\n" +
+                "   ~~~~~~ The Grub Selection ~~~~~~\n" +
                 "   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" + RESET);
     }
-
 
     public static void printSandwichArt() {
         System.out.println(GOLD +
@@ -65,7 +70,6 @@ public class DeliColor {
                 "   ~~~~~~ No think menu  ~~~~~~~~~~\n" +
                 "   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n" + RESET);
     }
-
 
 
     public static void printDrinkArt() {

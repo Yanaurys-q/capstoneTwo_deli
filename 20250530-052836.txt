@@ -1,0 +1,9 @@
+Customer: Yana
+Chicken Club (Toasted)
+  - Grilled Chicken x1
+  - Bacon x1
+  - Lettuce x1
+  - Tomato x1
+  - Mayo x1
+
+Total: $10.50
